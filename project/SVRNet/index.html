@@ -35,24 +35,24 @@
     <hr>
     <p class="authors">
         <a href="https://winter-flow.github.io/">Mingfeng Zha</a>,
-        Yunqiang Pei,
-        <a href="https://faculty.uestc.edu.cn/wangguoqing2/zh_CN/index.htm">Guoqing Wang</a>,
-        Tianyu Li,
-        Xiongxin Tang,
+        <a href="https://scholar.google.com/citations?user=XzZSbxAAAAAJ&hl=en&oi=sra">Yunqiang Pei</a>,
+        <a href="https://faculty.uestc.edu.cn/wangguoqing2/zh_CN/index.htm">Guoqing Wang*</a>,
+        <a href="https://scholar.google.com/citations?user=6MUsCT4AAAAJ&hl=en&oi=sra">Tianyu Li</a>,
+        <a href="https://teacher.ucas.ac.cn/~0066508">Xiongxin Tang</a>,
         <a href="https://scholar.google.com/citations?user=73trMQkAAAAJ&hl=en">Jiayi Ma</a>,
         <a href="https://cfm.uestc.edu.cn/~yangyang/">Yang Yang</a>,
-        <a href="https://scholar.google.com.au/citations?user=krryaDkAAAAJ&hl=en">Heng Tao Shen</a>,
+        <a href="https://scholar.google.com.au/citations?user=krryaDkAAAAJ&hl=en">Heng Tao Shen</a>
 
     </p>
 
-    <div class="nerf_equal_v2"><span class="text-span_nerf">*</span><span class="text-span_nerf_star">*</span>denotes corresponding author</div>
+    <div class="nerf_equal_v2"><span class="text-span_nerf">*</span><span class="text-span_nerf_star">*</span>Denotes Corresponding Author</div>
 
     </br></br>
     <div class="btn-group" role="group" aria-label="Top menu">
         <a class="btn btn-primary" href="https://ChengShiest.github.io/docs/02613.pdf">Paper</a>
         <a class="btn btn-primary" href="https://chengshiest.github.io/logo/">Dataset</a>
-        <a href="https://github.com/winter-flow/WSMD">Detection Results</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-        <a href="https://github.com/winter-flow/WSMD">Code (upon acceptance)</a>
+        <a class="btn btn-primary" href="https://github.com/winter-flow/WSMD">Experimental Results</a>
+        <a class="btn btn-primary" href="https://github.com/winter-flow/WSMD">Code (upon acceptance)</a>
     </div>
 </div>
 
@@ -63,13 +63,14 @@
         <h2 class="grey-heading_nerf">Illustration</h2>
 <!--    <div class="section">-->
         <div class="columns-5 w-row">
-            <img src="img/eda_p1.png" style="width:100%; margin-right:0px; margin-top:0px;">
+            <img src="imgs/Motivation and superiority.png" style="width:100%; margin-right:0px; margin-top:0px;">
         </div>
         <p class="paragraph-3 nerf_text">
-            Different approaches to building an open-vocabulary
-            detector: (a) generate pseudo “novel” proposals from extra train-
-            ing resources and VLMs, or (b) generalize from VLMs, and (c)
-            their performance comparison. †: with self-training
+            Existing MD and related binary segmentation frameworks. (a) The naive encoding-decoding represented by HetNet; 
+            (b) The dual-stream represented by SATNet; 
+            (c) The explicit visual prompt represented by EVP; 
+            (d) Our SVRNet. Comparison of our SVRNet with different types state-of-the-art (SOTA) detection methods on weighted F-measure, IoU, and parameters using the MSD dataset. 
+            Larger circle indicates more parameters.
         </p>
     </div>
 
@@ -81,34 +82,21 @@
                 Abstract
             </h2>
             <p class="paragraph-3 nerf_text">
-                Vision-language models such as CLIP have boosted the
-                performance of open-vocabulary object detection, where
-                the detector is trained on base categories but required to
-                detect novel categories. Existing methods leverage CLIP's
-                strong zero-shot recognition ability to align object-level embeddings with textual embeddings of categories. However,
-                we observe that using CLIP for object-level alignment results in overfitting to base categories, i.e., novel categories
-                most similar to base categories have particularly poor performance as they are recognized as similar base categories.
-                In this paper, we first identify that the loss of critical finegrained local image semantics hinders existing methods
-                from attaining strong base-to-novel generalization. Then,
-                we propose Early Dense Alignment (EDA) to bridge the gap
-                between generalizable local semantics and object-level prediction. In EDA, we use object-level supervision to learn
-                the dense-level rather than object-level alignment to maintain the local fine-grained semantics. Extensive experiments demonstrate our superior performance to competing
-                approaches under the same strict setting and without using
-                external training resources, i.e., improving the +8.4% novel
-                box AP50 on COCO and +3.9% rare mask AP on LVIS.
+                Mirror detection (MD) aims to overcome interference caused by reflections and locate mirror regions. 
+                Existing methods focus on designing components to explicitly establish the associations between physical entities and corresponding imagings, 
+                or utilizing rotation to construct symmetric consistency. We observe that: a) only partial or none of entities and imagings are matched; 
+                b) smooth surfaces (e.g., tiles) and transparent objects (e.g., glasses) also exhibit reflections; 
+                c) occlusion and scale variation of mirror regions. To address these issues in a unified manner, 
+                we formulate the scene-aware visual reasoning network (SVRNet) based on visual prompts. 
+                Specifically, we design the prompt chain reasoning (PCR) that generates a chain of thought reasoning based on maximal difference heterogeneous prototypes to construct complex spatial location and semantic perception. 
+                Noise may accumulate gradually through the chain, and crucial clues may also disappear. 
+                Therefore, we introduce the prompt evolution (PE) to filter out noise and enhance the coupling between prompts. 
+                We further propose the prompt injection expert (PIE) to dynamically select the optimal injection strategy in the low-rank space based on specific scene. 
+                Due to reflection interference causing potential ambiguity in prompts and features, we propose the evidence-aware (EA) loss to quantify uncertainty, 
+                thereby providing reliable predictions. Besides, we relabel 25,828 images to validate the model performance in the weakly supervised setting. 
+                Extensive experiments on four mirror benchmarks demonstrate that our method surpasses state-of-the-art approaches. 
+                Encouraging results are also achieved on six related benchmarks, showing its generality.
 
-            </p>
-            <div class="columns-5 w-row">
-                <img src="img/eda_p2.png" style="width:95%; margin-right:0px; margin-top:0px;">
-            </div>
-            <p class="paragraph-3 nerf_text">
-                The comparison between Object-level Alignment and our Early Dense Alignment (Eda) on (a1)-(b1) architectures, (a2)-(b2)
-                local image semantics and clustering results, and (c) box AP of novel categories similar to base categories. We list six novel categories
-                most similar to base categories by calculating the average similarity between the randomly sampled thousands of novel objects' visual
-                features and base categories' text embeddings. Our Eda: (1) successfully recognizes the fine-grained novel CD-player that is predicted to
-                base speaker by object-level alignment; (2) better groups local image semantics into object regions compared with CLIP; (3) achieves a
-                much higher novel box AP for predicting novel objects similar to base objects, showing that Eda can distinguish fine-grained details of
-                similar novel and base categories. In contrast, object-level alignment overfits base categories.
             </p>
 
             <h2 class="grey-heading_nerf">
@@ -123,7 +111,7 @@
 
             </p>
             <div class="columns-5 w-row">
-                <img src="img/eda_p3.png" style="width:95%; margin-right:0px; margin-top:0px;">
+                <img src="imgs/Method.png" style="width:95%; margin-right:0px; margin-top:0px;">
             </div>
         </div>
     </div>
@@ -135,21 +123,20 @@
         <s2>Performance</s2>
         <hr>
         <h2 class="grey-heading_nerf">
-            Open-vocabulary object detection results on COCO and LVIS datasets.
+            Quantitative comparison on four mirror datasets
         </h2>
         <div class="columns-5 w-row">
-            <img src="img/eda_p4.png" style="width:95%; margin-right:0px; margin-top:0px;">
+            <img src="imgs/Quantitative comparison on four mirror datasets.png" style="width:95%; margin-right:0px; margin-top:0px;">
         </div>
 
         <h2 class="grey-heading_nerf">
                 Visulization
         </h2>
         <p class="paragraph-3 nerf_text">
-            We visualize our detection results and semantic maps on (a) LVIS [17], (b) COCO [29] and (c)
-            out-of-distribution images from the open-source website.
+            Qualitative comparison on four mirror datasets
         </p>
         <div class="columns-5 w-row">
-            <img src="img/eda_p5.png" style="width:95%; margin-right:0px; margin-top:0px;">
+            <img src="imgs/Qualitative comparison on four mirror datasets.png" style="width:95%; margin-right:0px; margin-top:0px;">
         </div>
 
 
@@ -159,13 +146,14 @@
         </br></br>
 
 
-        <s2>Acknowledgements</s2>
+        <s2> Acknowledgements </s2>
         <hr>
-        <div class="acknowledgements">
-        {
-            This work was supported in part by the National Natural Science Foundation of China under grant U23B2011, 62102069, U20B2063 and 62220106008, the Key R\&D Program of Zhejiang under grant 2024SSYS0091.
-        }
-        </div>
+        <p class="paragraph-3 nerf_text">
+            Thank you very much to Prof. Rynson W.H. Lau and his team for their series of work on mirror detection, from which we benefit greatly. 
+            This work was supported in part by the National Natural Science Foundation of China under grant U23B2011, 
+            62102069, U20B2063 and 62220106008, the Key R&D Program of Zhejiang under grant 2024SSYS0091.
+        </p>
+
 
 
         <!-- <s2>Bibtex</s2>
