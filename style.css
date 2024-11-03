@@ -98,16 +98,16 @@ h1 {
 }
 
 #intro-image {
-  margin: 7.5em 0 0 2em;
-  width: 23em;
-  height: 14.2em;
+  margin: 2em 0 0 2em;
+  width: 12em;
+  height: 12em;
   float: left;
   overflow: hidden;
   border-radius: 1em;
 }
 
 #intro-image img {
-  width: 20em;
+  width: 12em;
 }
 
 /**************************************************/
@@ -188,13 +188,7 @@ h2 {
 
 .list-item p.date {
   display: inline-block;
-  width: 4em;
-  color: #a0a8b0;
-}
-
-.list-item p.year {
-  display: inline-block;
-  width: 2.5em;
+  width: 3em;
   color: #a0a8b0;
 }
 
@@ -207,7 +201,6 @@ h2 {
   gap: 10px;
   grid-auto-rows: minmax(100px, auto);
   height: 12.5em;
-  align-items: center;
 }
 
 .previews video {
@@ -298,10 +291,9 @@ h3 a:hover {
 }
 
 .project-description {
-  width: 100%;
+  width: 80%;
   float: left;
 }
-
 
 /**************************************************/
 /* Subtle footer at the bottom of the page. */
