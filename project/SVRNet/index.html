@@ -65,104 +65,10 @@
 
 
 <div class="container">
-    <div class="w-container">
-        <h2 class="grey-heading_nerf">Illustration</h2>
-<!--    <div class="section">-->
-        <div class="columns-5 w-row">
-            <img src="imgs/Motivation and superiority.png" style="width:100%; margin-right:0px; margin-top:0px;">
-        </div>
-        <p class="paragraph-3 nerf_text">
-            Existing MD and related binary segmentation frameworks. (a) The naive encoding-decoding represented by HetNet; 
-            (b) The dual-stream represented by SATNet; 
-            (c) The explicit visual prompt represented by EVP; 
-            (d) Our SVRNet. Comparison of our SVRNet with different types state-of-the-art (SOTA) detection methods on weighted F-measure, IoU, and parameters using the MSD dataset. 
-            Larger circle indicates more parameters.
-        </p>
-    </div>
-
-<!--<hr>-->
-    </br></br>
-    <div data-anchor="slide1" class="section nerf_section">
-        <div class="grey_container w-container">
-            <h2 class="grey-heading_nerf">
-                Motivation
-            </h2>
-            <p class="paragraph-3 nerf_text">
-                Mirror detection (MD) aims to overcome interference caused by reflections and locate mirror regions. 
-                Existing methods focus on designing components to explicitly establish the associations between physical entities and corresponding imagings, 
-                or utilizing rotation to construct symmetric consistency. We observe that: a) only partial or none of entities and imagings are matched; 
-                b) smooth surfaces (e.g., tiles) and transparent objects (e.g., glasses) also exhibit reflections; 
-                c) occlusion and scale variation of mirror regions. To address these issues in a unified manner, 
-                we formulate the scene-aware visual reasoning network (SVRNet) based on visual prompts. 
-                Specifically, we design the prompt chain reasoning (PCR) that generates a chain of thought reasoning based on maximal difference heterogeneous prototypes to construct complex spatial location and semantic perception. 
-                Noise may accumulate gradually through the chain, and crucial clues may also disappear. 
-                Therefore, we introduce the prompt evolution (PE) to filter out noise and enhance the coupling between prompts. 
-                We further propose the prompt injection expert (PIE) to dynamically select the optimal injection strategy in the low-rank space based on specific scene. 
-                Due to reflection interference causing potential ambiguity in prompts and features, we propose the evidence-aware (EA) loss to quantify uncertainty, 
-                thereby providing reliable predictions. Besides, we relabel 25,828 images to validate the model performance in the weakly supervised setting. 
-                Extensive experiments on four mirror benchmarks demonstrate that our method surpasses state-of-the-art approaches. 
-                Encouraging results are also achieved on six related benchmarks, showing its generality.
-            </p>
-
-            <h2 class="grey-heading_nerf">
-                Method
-            </h2>
-            <p class="paragraph-3 nerf_text">
-                Architecture comparison between (a) our deeplydecoupled EdaDet and (b) existing open-vocabulary detection
-                framework. EdaDet separates the open-vocabulary classification
-                branch from the class-agnostic proposal generation branch at a
-                more shallow layer of the decoder. EdaDet first individually generates object proposals and predicts dense probabilities to categories
-                for local image semantics and then computes object proposals' categories based on the dense probabilities.
-            </p>
-            <div class="columns-5 w-row">
-                <img src="imgs/Method.png" style="width:95%; margin-right:0px; margin-top:0px;">
-            </div>
-        </div>
-    </div>
-
-
+    
 
     </br></br>
     <div class="section">
-        <s2>Experiemnt</s2>
-        <hr>
-        <h2 class="grey-heading_nerf">
-            Qualitative comparison
-        </h2>
-        <p class="paragraph-3 nerf_text">
-            Four mirror benchmarks
-        </p>
-        <div class="columns-5 w-row">
-            <img src="imgs/Quantitative comparison on four mirror datasets.png" style="width:95%; margin-right:0px; margin-top:0px;">
-        </div>
-        <p class="paragraph-3 nerf_text">
-            Six other benchmarks
-        </p>
-        <div class="columns-5 w-row">
-            <img src="imgs/Quantitative comparison on other tasks.png" style="width:95%; margin-right:0px; margin-top:0px;">
-        </div>
-
-        <h2 class="grey-heading_nerf">
-            Qualitative comparison
-        </h2>
-        <p class="paragraph-3 nerf_text">
-            Four mirror benchmarks
-        </p>
-        <div class="columns-5 w-row">
-            <img src="imgs/Qualitative comparison on four mirror datasets.png" style="width:95%; margin-right:0px; margin-top:0px;">
-        </div>
-        <p class="paragraph-3 nerf_text">
-            Six other benchmarks
-        </p>
-        <div class="columns-5 w-row">
-            <img src="imgs/Qualitative comparison on other tasks.png" style="width:95%; margin-right:0px; margin-top:0px;">
-        </div>
-
-
-        </br></br></br>
-
-        </br></br>
-
 
         <s2>Series of Works</s2>
         <hr>
