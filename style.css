@@ -44,6 +44,11 @@ table {
   border-spacing: 0;
 }
 
+.award strong {
+  font-weight: 600; /* 或 bold */
+}
+
+
 /**************************************************/
 
 #body{
