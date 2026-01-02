@@ -49,6 +49,13 @@ table {
 }
 
 
+.dagger {
+  display: inline-block;      /* 必须：transform 才能稳定生效 */
+  font-size: 0.7em;           /* 可选：让符号更小 */
+  transform: translate(30%, -30%);  /* 往右 30%，往上 50% */
+}
+
+
 /**************************************************/
 
 #body{
