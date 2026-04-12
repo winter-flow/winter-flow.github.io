@@ -4,10 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Towards Omni-Implicit Counterfactual Learning in Audio-Visual Segmentation">
-    <meta name="author" content="Mingfeng Zha, Guoqing Wang, Tianyu Li, Peng Wang, Yunqiang Pei, Jingcai Guo, Yang Yang, Heng Tao Shen">
 
-    <title>Towards Omni-Implicit Counterfactual Learning in Audio-Visual Segmentation</title>
+    <title>Decoupled Causal Flow for Audio-Visual Segmentation</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -70,11 +68,6 @@
         }
 
         /* Authors & Affiliations */
-        .authors {
-            text-align: center;
-            margin-top: 1.5rem;
-        }
-
         .authors a {
             color: var(--morandi-primary);
             text-decoration: none;
@@ -112,37 +105,42 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
         }
 
-        /* Content Section Card */
-        .content-section {
+        /* Abstract Section */
+        .abstract-section {
             background-color: var(--morandi-surface);
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
-        .content-section h2 {
+        .abstract-section h2 {
             color: var(--morandi-text);
             font-weight: 600;
-            margin-bottom: 25px;
-            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Video Section */
+        .section-title {
+            color: var(--morandi-text);
+            font-weight: 600;
+            margin-bottom: 30px;
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 10px;
         }
         
-        .content-section h2::after {
+        .section-title::after {
             content: "";
             position: absolute;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 50px;
+            width: 60px;
             height: 3px;
             background-color: var(--morandi-accent);
             border-radius: 2px;
         }
 
-        /* Video Section */
         .video-category-title {
             color: var(--morandi-primary);
             font-size: 1.5rem;
@@ -176,15 +174,17 @@
 
         /* BibTeX */
         pre {
-            background-color: var(--morandi-bg) !important;
+            background-color: var(--morandi-surface) !important;
             border: 1px solid var(--morandi-border);
             color: var(--morandi-text);
-            border-radius: 8px;
             box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
             font-size: 0.95rem;
-            overflow-x: auto;
         }
 
+        hr {
+            border-top: 1px solid var(--morandi-border);
+            margin: 3rem 0;
+        }
     </style>
 </head>
 
@@ -192,12 +192,12 @@
 
 <div class="jumbotron jumbotron-fluid">
     <div class="container text-center">
-        <h1 class="nerf_title_v2"><strong>OICL</strong></h1>
-        <h2 class="nerf_subheader_v2">Towards Omni-Implicit Counterfactual Learning in Audio-Visual Segmentation</h2>
-        <h3 class="nerf_subheader_v2">ICCV 2025 Extension</h3>
+        <h1 class="nerf_title_v2"><strong>DCF</strong></h1>
+        <h2 class="nerf_subheader_v2">Decoupled Causal Flow for Audio-Visual Segmentation</h2>
+        <h3 class="nerf_subheader_v2">Submitted to IEEE Journal</h3>
         
-        <div class="authors" style="font-size: 1.2rem; font-weight: 500;">
-            <p>
+        <div class="mt-4 mb-4">
+            <p class="authors" style="font-size: 1.2rem; font-weight: 500;">
                 <a href="https://winter-flow.github.io/">Mingfeng Zha</a>,
                 <a href="https://scholar.google.com/citations?hl=en&user=V08v5OEAAAAJ">Guoqing Wang</a><sup>*</sup>,
                 <a href="https://scholar.google.com/citations?user=6MUsCT4AAAAJ&hl=en&oi=sra">Tianyu Li</a>,
@@ -209,7 +209,7 @@
             </p>
         </div>
 
-        <div class="affiliations d-flex flex-column align-items-center gap-2 mt-3">
+        <div class="affiliations d-flex flex-column align-items-center gap-2">
             <p>University of Electronic Science and Technology of China</p>
             <p>The Hong Kong Polytechnic University</p>
             <p>Tongji University</p>
@@ -217,13 +217,13 @@
 
         <div class="row justify-content-center mt-5">
             <div class="col-md-10">
-                <div class="btn-group d-flex flex-wrap justify-content-center" role="group" aria-label="Top menu">
-                    <a class="btn btn-primary m-1" href="https://openaccess.thecvf.com/content/ICCV2025/papers/Zha_Implicit_Counterfactual_Learning_for_Audio-Visual_Segmentation_ICCV_2025_paper.pdf" target="_blank">Conference Version</a>
-                    <a class="btn btn-primary m-1" href="https://drive.google.com/file/d/1jNyxI91mD-shBpbb0Se28FPRzOCwMXWc/view?usp=drive_link" target="_blank">Segmentation Results (Google Drive)</a>
-                    <a class="btn btn-primary m-1" href="https://pan.baidu.com/s/1fARfFl3jlfN2_Pb7VF-QNQ?pwd=143y" target="_blank">Segmentation Results (Baidu)</a>
-                    <a class="btn btn-primary m-1" href="https://drive.google.com/file/d/1v3jE8Hr0_okEJgOMyf-pVAaLtgu89FjU/view?usp=drive_link" target="_blank">Comparison Results (Google Drive)</a>
-                    <a class="btn btn-primary m-1" href="https://pan.baidu.com/s/1RH34CrRDQV4g_yyeV7j0FQ?pwd=pi6r" target="_blank">Comparison Results (Baidu)</a>
-                    <a class="btn btn-primary m-1" href="https://drive.google.com/file/d/1Tvse5DIYFQa6e_dmnba_O0U7fKKin_TW/view?usp=drive_link" target="_blank">Evaluation Code</a>
+                <div class="btn-group d-flex flex-wrap justify-content-center" role="group" aria-label="Links menu">
+                    <a class="btn btn-primary m-1" href="https://openaccess.thecvf.com/content/ICCV2025/papers/Zha_Implicit_Counterfactual_Learning_for_Audio-Visual_Segmentation_ICCV_2025_paper.pdf">Conference Version</a>
+                    <a class="btn btn-primary m-1" href="https://drive.google.com/file/d/1jNyxI91mD-shBpbb0Se28FPRzOCwMXWc/view?usp=drive_link">Segmentation Results (Drive)</a>
+                    <a class="btn btn-primary m-1" href="https://pan.baidu.com/s/1fARfFl3jlfN2_Pb7VF-QNQ?pwd=143y">Segmentation Results (Baidu)</a>
+                    <a class="btn btn-primary m-1" href="https://drive.google.com/file/d/1v3jE8Hr0_okEJgOMyf-pVAaLtgu89FjU/view?usp=drive_link">Comparison Results (Drive)</a>
+                    <a class="btn btn-primary m-1" href="https://pan.baidu.com/s/1RH34CrRDQV4g_yyeV7j0FQ?pwd=pi6r">Comparison Results (Baidu)</a>
+                    <a class="btn btn-primary m-1" href="https://drive.google.com/file/d/1Tvse5DIYFQa6e_dmnba_O0U7fKKin_TW/view?usp=drive_link">Evaluation Code</a>
                 </div>
             </div>
         </div>
@@ -237,20 +237,20 @@
 </div>
 
 <div class="container">
-
     <div class="row">
-        <div class="col-md-10 offset-md-1 content-section">
-            <h2>Abstract</h2>
-            <p class="text-justify" style="font-size: 1.05em; line-height: 1.7;">
-                Audio-visual segmentation (AVS) requires precise pixel-level localization and classification guided by acoustic cues. However, existing methods often suffer from modality representation discrepancies and spurious correlations, where the model may over-rely on visual dominance rather than authentic audio-visual causality. In this work, we propose Omni-Implicit Counterfactual Learning (OICL), a unified causal inference paradigm for unbiased and fine-grained AVS. To bridge the gap between sparse audio and dense visual features, we first introduce Multi-granularity Implicit Text (MIT). By establishing a shared embedding space across video, segment, and frame levels, MIT provides a semantically grounded medium for cross-modal interaction. Building upon this, we develop a dual-pathway counterfactual intervention framework to disentangle causal dependencies. Specifically, Hierarchical Semantic Counterfactual (HSC) intervenes in the semantic space through a fast–slow mechanism, where implicit MIT cues enable rapid local adaptations while MLLM-driven descriptions provide stable context reasoning. Symmetrically, Hierarchical Perceptual Counterfactual (HPC) performs modality-aware interventions along audio and visual pathways, utilizing a similar fast–slow strategy to enhance robustness across diverse perceptual subspaces. These counterfactual constructions are optimized via Distribution-informed Cooperative Contrastive Learning (DCCL), a structured objective that jointly models factual–counterfactual, intra-modal, and inter-modal relationships, thereby suppressing spurious biases while promoting cohesive yet decoupled representations. Extensive experiments on six benchmarks demonstrate that OICL achieves state-of-the-art performance, with superior generalization in few-shot and open-vocabulary scenarios.
+        <div class="col-md-10 offset-md-1 abstract-section">
+            <h2 class="text-center">Abstract</h2>
+            <p class="text-justify" style="font-size: 1.05em;">
+                Audio-visual segmentation (AVS) seeks to localize sounding objects within visual frames by leveraging acoustic cues. Existing models are typically optimized via empirical risk minimization, which exploits dataset-level co-occurrence biases and temporal heuristics rather than intrinsic physical mechanisms, leading to generalization degradation under distribution shifts. To address this, we formulate the AVS task via structural causal models, identifying unobserved spatial global context and temporal salient motion as distinct confounders that establish spurious shortcuts. We propose the decoupled causal flow (DCF) framework to approximate interventional distributions without any external foundation models. At the holistic level, we apply the calculus of intervention via dynamic memory banks to sample from marginalized contextual distributions, constructing multi-modal counterfactual sets. At the representation level, we establish that standard spatial attention amplifies confounding biases and thereby introduce a differentiable bi-directional subspace factorization to isolate the low-rank causal subspace from high-rank contextual noise in the spectral domain. Beyond passive observation, we actively synthesize spatiotemporal counterfactuals by structurally disrupting endogenous fine-grained physical topologies and severing temporal Copula dependencies. These multi-level interventions are unified through a hierarchical causal alignment objective. By bounding the spurious total indirect effect driven by synergistic environmental confounding, DCF enforces cross-modal representation invariance and predictive confidence consistency. Extensive experiments on AVS benchmarks demonstrate that our framework effectively suppresses spatiotemporal confounders and achieves state-of-the-art performance.
             </p>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-12 content-section" style="background-color: transparent; box-shadow: none; padding: 0;">
-            <h2 class="text-center" style="margin-bottom: 40px;">Demo Videos</h2>
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h2 class="text-center section-title">Demo Videos</h2>
             
+            <h4 class="video-category-title">Part 1: Binary / Semantic Segmentation</h4>
             <div class="row">
                 <div class="col-md-4">
                     <div class="video-card">
@@ -302,7 +302,7 @@
                 </div>
             </div>
 
-
+            <h4 class="video-category-title mt-4">Part 2: Instance Segmentation</h4>
             <div class="row">
                 <div class="col-md-4">
                     <div class="video-card">
@@ -329,14 +329,17 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-10 offset-md-1 content-section">
-            <h2>BibTeX</h2>
-            <pre style="padding: 20px;"><code>@article{zha2026oicl,
-    title={Towards Omni-Implicit Counterfactual Learning in Audio-Visual Segmentation},
+    <hr>
+    
+    <div class="row mb-5">
+        <div class="col-md-10 offset-md-1">
+            <h2 class="section-title text-center">BibTeX</h2>
+            <pre style="padding: 20px; border-radius: 8px; overflow-x: auto;"><code>@article{zha2026dcf,
+    title={Decoupled Causal Flow for Audio-Visual Segmentation},
     author={Zha, Mingfeng and Wang, Guoqing and Li, Tianyu and Wang, Peng and Pei, Yunqiang and Guo, Jingcai and Yang, Yang and Shen, Heng Tao},
     journal={preprint},
     year={2026}

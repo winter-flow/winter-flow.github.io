@@ -1,0 +1,687 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-STGLQW4BJX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-STGLQW4BJX');
+    </script>
+
+    <title>Mingfeng ZHA - University of Electronic Science and Technology of China</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/icon.png">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Signature Morandi Color Palette */
+            --morandi-bg: #f4f3ef;          /* Soft warm grey/beige background */
+            --morandi-surface: #ffffff;     /* Clean white for cards */
+            --morandi-primary: #78858b;     /* Slate blue-grey for buttons/links */
+            --morandi-primary-hover: #5d676b;
+            --morandi-accent: #b0a39c;      /* Dusty warm grey/brown for highlights */
+            --morandi-text: #4a4a4a;        /* Soft dark grey for main text */
+            --morandi-text-light: #7a7a7a;  /* Lighter grey for secondary text */
+            --morandi-border: #e8e6e1;
+            
+            --max-width: 900px;
+        }
+
+        body {
+            background-color: var(--morandi-bg);
+            color: var(--morandi-text);
+            font-family: 'Asap', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Restored original FangSong font setting */
+        .fangsong {
+            font-family: 'FangSong', 'STFangsong', serif;
+            color: var(--morandi-text);
+        }
+
+        a {
+            color: var(--morandi-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--morandi-primary-hover);
+            text-decoration: underline;
+        }
+
+        #main {
+            max-width: var(--max-width);
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        /* Intro Section (Bio & Profile) */
+        #intro {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--morandi-surface);
+            padding: 45px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            margin-bottom: 40px;
+            gap: 40px;
+            border: 1px solid var(--morandi-border);
+        }
+
+        #intro-text {
+            flex: 1;
+            text-align: justify;
+        }
+
+        #intro-text h1 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+            color: var(--morandi-text);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        #intro-text p {
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+        }
+
+        .profile-links {
+            margin-top: 20px;
+            font-weight: 500;
+        }
+
+        .profile-links a {
+            display: inline-block;
+            margin-right: 20px;
+            color: var(--morandi-primary);
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .profile-links a:hover {
+            text-decoration: none;
+            border-bottom: 1px solid var(--morandi-primary-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Updated Avatar: Rounded Rectangle Portrait */
+        #intro-image img {
+            width: 180px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 16px; /* Rounded corners instead of full circle */
+            border: 4px solid var(--morandi-surface);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        #intro-image img:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Filter Buttons */
+        .button-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .button {
+            background-color: transparent;
+            color: var(--morandi-text-light);
+            border: 2px solid var(--morandi-border);
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            border-color: var(--morandi-primary);
+            color: var(--morandi-primary);
+            transform: translateY(-1px);
+        }
+
+        .button.is-checked {
+            background-color: var(--morandi-primary);
+            border-color: var(--morandi-primary);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(120, 133, 139, 0.2);
+            transform: none;
+        }
+
+        /* Grid Items (Isotope layout) */
+        .grid {
+            width: 100%;
+        }
+
+        .list-item {
+            width: 100%;
+            background-color: var(--morandi-surface);
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+            border: 1px solid var(--morandi-border);
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Added subtle hover effect for cards */
+        .list-item:not(.description):hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+            border-color: rgba(176, 163, 156, 0.4); /* Slight accent color on border */
+        }
+
+        /* Highlights / News */
+        .highlight {
+            display: flex;
+            align-items: center;
+            font-size: 1.05rem;
+        }
+        
+        .highlight strong, .highlight .date {
+            color: var(--morandi-primary);
+            font-weight: 600;
+            min-width: 85px;
+            margin-right: 15px;
+            border-right: 2px solid var(--morandi-accent);
+            padding-right: 15px;
+        }
+
+        /* Publication Specifics */
+        .publication.description {
+            background: transparent;
+            box-shadow: none;
+            border: none;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        
+        .publication.description:hover {
+            transform: none;
+        }
+
+        .publication.description i {
+            color: var(--morandi-accent);
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .project-description h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1.15rem;
+        }
+
+        .project-description h3 a {
+            color: var(--morandi-text);
+            font-weight: 600;
+        }
+
+        .project-description h3 a:hover {
+            color: var(--morandi-primary);
+        }
+
+        .project-description p {
+            margin: 0;
+            color: var(--morandi-text-light);
+            font-size: 0.95rem;
+        }
+
+        .project-description i {
+            color: var(--morandi-text);
+            display: block;
+            margin-top: 4px;
+            margin-bottom: 6px;
+        }
+
+        /* Special style for author name */
+        ins {
+            text-decoration: none;
+            color: var(--morandi-text);
+            font-weight: 600;
+            border-bottom: 2px solid var(--morandi-accent);
+            padding-bottom: 1px;
+        }
+        
+        .dagger {
+            font-weight: bold;
+            color: var(--morandi-text);
+        }
+
+        /* Awards */
+        .award {
+            display: flex;
+            align-items: center;
+        }
+
+        .award .date {
+            color: var(--morandi-primary);
+            font-weight: 600;
+            min-width: 60px;
+            margin: 0;
+            margin-right: 20px;
+            border-right: 2px solid var(--morandi-accent);
+            padding-right: 15px;
+        }
+
+        /* Services */
+        .service-category {
+            font-weight: 600;
+            color: var(--morandi-primary);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--morandi-border);
+            padding-bottom: 5px;
+        }
+
+        .service-list {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--morandi-text);
+            font-size: 1.05rem;
+        }
+
+        .service-list li {
+            margin-bottom: 6px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #intro {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 30px 20px;
+            }
+            #intro-text {
+                text-align: center;
+            }
+            .profile-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .profile-links a {
+                margin: 0;
+            }
+            #intro-image img {
+                width: 160px;
+                height: 160px; /* Make it square on mobile to save space */
+            }
+            .highlight {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .highlight .date {
+                border-right: none;
+                border-bottom: 2px solid var(--morandi-accent);
+                margin-bottom: 8px;
+                padding-bottom: 5px;
+            }
+            .award {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .award .date {
+                border-right: none;
+                border-bottom: 2px solid var(--morandi-accent);
+                margin-bottom: 8px;
+                padding-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body id="body">
+
+    <div id="main">
+      <div id="intro">
+        <div id="intro-text">
+          <h1>Mingfeng ZHA</h1>
+          <p>
+            Hi, there! My Chinese name is <span class="fangsong">查明峰</span>. I am a third-year master student from the <a href="https://cfm.uestc.edu.cn/" target="_blank">Center For Future Media</a> (led by <a href="https://scholar.google.com.au/citations?user=krryaDkAAAAJ&hl=en" target="_blank">Prof. Heng Tao Shen</a>), University of Electronic Science and Technology (UESTC), 
+            supervised by <a href="https://faculty.uestc.edu.cn/wangguoqing2/zh_CN/index.htm" target="_blank">Prof. Guoqing Wang</a>. During undergraduate studies, I collaborated with <a href="https://jixin.jxau.edu.cn/info/1051/2512.htm" target="_blank">Prof. Wenbin Qian</a>. 
+            My research interests primarily include computer vision and multimodal learning (e.g., unified framework). 
+          </p>
+          <p>
+            Please feel free to contact me by email if you're interested in discussing potential collaborations or partnering on research projects.
+          </p>
+          
+          <div class="profile-links">
+            <a href="https://scholar.google.com.hk/citations?user=EKNIWTIAAAAJ&hl=zh-CN&oi=ao" target="_blank">Google Scholar</a>
+            <a href="https://dblp.org/pid/310/3729.html" target="_blank">DBLP</a>
+            <a href="mailto:zhamf1116@gmail.com">Email</a>
+          </div>
+        </div>
+        
+        <div id="intro-image">
+            <img src="images/profile.jpg" alt="Mingfeng Zha Profile Picture">
+        </div>
+      </div>
+
+      <div id="filters" class="button-group">
+        <button class="button is-checked" data-filter=".highlight">News</button>
+        <button class="button" data-filter=".publication">Research</button>
+        <button class="button" data-filter=".award">Awards</button>
+        <button class="button" data-filter=".service">Services</button>
+      </div>
+
+      <div class="grid">
+
+        <div id="main-highlights">
+            <div class="list-item highlight" data-category="highlight">
+                <span class="date">2026/04</span> One paper has been accepted by TMM
+            </div>
+            <div class="list-item highlight" data-category="highlight">
+                <span class="date">2026/02</span> Received AAAI Outstanding Program Committee Award
+            </div>
+            <div class="list-item highlight" data-category="highlight">
+                <span class="date">2026/01</span> One paper has been accepted by TCSVT
+            </div>
+            <div class="list-item highlight" data-category="highlight">
+                <span class="date">2025/11</span> One paper has been accepted by AAAI
+            </div>
+            <div class="list-item highlight" data-category="highlight">
+                <span class="date">2025/10</span> Received National Scholarship and First Class Scholarship of UESTC
+            </div>
+            <div class="list-item highlight" data-category="highlight">
+                <span class="date">2025/07</span> One paper has been accepted by UIST
+            </div>
+            <div class="list-item highlight" data-category="highlight">
+                <span class="date">2025/06</span> One paper has been accepted by ICCV
+            </div>
+            <div class="list-item highlight" data-category="highlight">
+                <span class="date">2025/05</span> One paper has been accepted by TIP
+            </div>
+            <div class="list-item highlight" data-category="highlight">
+                <span class="date">2025/03</span> Received "Academic Youth" Postgraduate Student Honor Award of UESTC
+            </div>
+            <div class="list-item highlight" data-category="highlight">
+                <span class="date">2024/10</span> Received National Scholarship and First Class Scholarship of UESTC
+            </div>
+            <div class="list-item highlight" data-category="highlight">
+                <span class="date">2024/07</span> One paper has been accepted by ACM MM
+            </div>
+            <div class="list-item highlight" data-category="highlight">
+                <span class="date">2024/07</span> One paper has been accepted by TCSVT
+            </div>
+            <div class="list-item highlight" data-category="highlight">
+                <span class="date">2023/12</span> One paper has been accepted by AAAI
+            </div>
+        </div>
+        
+        <div class="list-item publication description" data-category="publication">
+            <i>&#9733; Preprint &#9733;</i>
+        </div>
+
+        <div class="list-item publication" data-category="publication">
+          <div class="project-description">
+            <h3><a href="./project/OICL/index.html">Towards Omni-Implicit Counterfactual Learning in Audio-Visual Segmentation</a></h3>
+            <p>
+                <ins>Mingfeng Zha</ins>, Guoqing Wang<span class="dagger">†</span>, Tianyu Li, Peng Wang, Yunqiang Pei, Jingcai Guo, Yang Yang, Heng Tao Shen
+            </p>
+            <p style="margin-top: 8px;">
+                <a href="./project/OICL/index.html">PDF</a> &nbsp;&bull;&nbsp; <a href="./project/OICL/index.html">Project</a>
+            </p>
+          </div>
+        </div>
+    
+        <div class="list-item publication" data-category="publication">
+          <div class="project-description">
+            <h3><a href="./project/HCL/index.html">Hierarchical Consistency Learning for Test-time Adaptation in Camouflage Perception</a></h3>
+            <p>
+                <ins>Mingfeng Zha</ins>, Tianyu Li<span class="dagger">†</span>, Guoqing Wang, Yunqiang Pei, Chaofan Qiao, Jiening Zhang, Yang Yang, Heng Tao Shen
+            </p>
+            <p style="margin-top: 8px;">
+                <a href="./project/HCL/index.html">PDF</a> &nbsp;&bull;&nbsp; <a href="./project/HCL/index.html">Project</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="list-item publication description" data-category="publication">
+            <i>&#9733; 2026 &#9733;</i>
+        </div>
+
+        <div class="list-item publication" data-category="publication">
+          <div class="project-description">
+            <h3><a href="./project/MirrorSAM/index.html">Seeing Beyond Illusion: Generalized and Efficient Mirror Detection</a></h3>
+            <p>
+                <ins>Mingfeng Zha</ins>, Guoqing Wang<span class="dagger">†</span>, Tianyu Li, Wei Dong, Peng Wang, Yang Yang
+            </p>
+            <i>AAAI Conference on Artificial Intelligence (AAAI), 2026</i>
+            <p style="margin-top: 8px;">
+                <a href="./project/MirrorSAM/1116_AAAI26_Seeing_Beyond_Illusion__Generalized_and_Efficient_Mirror_Detection.pdf">PDF</a> &nbsp;&bull;&nbsp; <a href="./project/MirrorSAM/index.html">Project</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="list-item publication" data-category="publication">
+          <div class="project-description">
+            <h3><a href="./project/SVRNet/index.html">Think Twice Before Determining: Towards Scene-aware Visual Reasoning for Mirror Detection</a></h3>
+            <p>
+                <ins>Mingfeng Zha</ins>, Guoqing Wang<span class="dagger">†</span>, Yunqiang Pei, Tianyu Li, Xiongxin Tang, Jiayi Ma, Yang Yang, Heng Tao Shen
+            </p>
+            <i>IEEE Transactions on Circuits and Systems for Video Technology (TCSVT), 2026</i>
+            <p style="margin-top: 8px;">
+                <a href="./project/SVRNet/0124.pdf">PDF</a> &nbsp;&bull;&nbsp; <a href="./project/SVRNet/index.html">Project</a>
+            </p>
+          </div>
+        </div>
+        
+        <div class="list-item publication description" data-category="publication">
+            <i>&#9733; 2025 &#9733;</i>
+        </div>
+
+        <div class="list-item publication" data-category="publication">
+          <div class="project-description">
+            <h3><a href="./project/ICL/index.html">Implicit Counterfactual Learning for Audio-Visual Segmentation</a></h3>
+            <p>
+                <ins>Mingfeng Zha</ins>, Tianyu Li<span class="dagger">†</span>, Guoqing Wang, Peng Wang, Yangyang Wu, Yang Yang, Heng Tao Shen
+            </p>
+            <i>International Conference on Computer Vision (ICCV), 2025</i>
+            <p style="margin-top: 8px;">
+                <a href="./documents/[ICCV2025] Implicit Counterfactual Learning for Audio-Visual Segmentation.pdf">PDF</a> &nbsp;&bull;&nbsp; <a href="./project/ICL/index.html">Project</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="list-item publication" data-category="publication">
+          <div class="project-description">
+            <h3><a href="./project/HEHP/index.html">Heterogeneous Experts and Hierarchical Perception for Underwater Salient Object Detection</a></h3>
+            <p>
+                <ins>Mingfeng Zha</ins>, Guoqing Wang<span class="dagger">†</span>, Yunqiang Pei, Tianyu Li, Xiongxin Tang, Chongyi Li, Yang Yang, Heng Tao Shen
+            </p>
+            <i>IEEE Transactions on Image Processing (TIP), 2025</i>
+            <p style="margin-top: 8px;">
+                <a href="./project/HEHP/[TIP2025] Heterogeneous Experts and Hierarchical Perception for Underwater Salient Object Detection.pdf">PDF</a> &nbsp;&bull;&nbsp; <a href="./project/HEHP/index.html">Project</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="list-item publication description" data-category="publication">
+            <i>&#9733; 2024 &#9733;</i>
+        </div>
+
+        <div class="list-item publication" data-category="publication">
+          <div class="project-description">
+            <h3><a href="https://github.com/winter-flow/DPRNet">Dual Domain Perception and Progressive Refinement for Mirror Detection</a></h3>
+            <p>
+                <ins>Mingfeng Zha</ins>, Feiyang Fu, Yunqiang Pei, Guoqing Wang<span class="dagger">†</span>, Tianyu Li, Xiongxin Tang, Yang Yang, Heng Tao Shen
+            </p>
+            <i>IEEE Transactions on Circuits and Systems for Video Technology (TCSVT), 2024</i>
+            <p style="margin-top: 8px;">
+                <a href="./documents/[TCSVT2024] Dual Domain Perception and Progressive Refinement for Mirror Detection.pdf">PDF</a> &nbsp;&bull;&nbsp; <a href="https://github.com/winter-flow/DPRNet">Project</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="list-item publication" data-category="publication">
+          <div class="project-description">
+            <h3><a href="https://github.com/winter-flow/WSMD">Weakly-Supervised Mirror Detection via Scribble Annotations</a></h3>
+            <p>
+                <ins>Mingfeng Zha</ins>, Yunqiang Pei, Guoqing Wang<span class="dagger">†</span>, Tianyu Li, Yang Yang, Wenbin Qian, Heng Tao Shen
+            </p>
+            <i>AAAI Conference on Artificial Intelligence (AAAI), 2024</i>
+            <p style="margin-top: 8px;">
+                <a href="./documents/[AAAI2024] Weakly-Supervised Mirror Detection via Scribble Annotations.pdf">PDF</a> &nbsp;&bull;&nbsp; <a href="https://github.com/winter-flow/WSMD">Project</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="list-item publication description" data-category="publication">
+            <i>&#9733; 2022 &#9733;</i>
+        </div>
+
+        <div class="list-item publication" data-category="publication">
+          <div class="project-description">
+            <h3><a href="https://ieeexplore.ieee.org/abstract/document/9833507/">Multifeature Transformation and Fusion-Based Ship Detection with Small Targets and Complex Backgrounds</a></h3>
+            <p>
+                <ins>Mingfeng Zha</ins>, Wenbin Qian<span class="dagger">†</span>, Wenji Yang, Yilu Xu
+            </p>
+            <i>IEEE Geoscience and Remote Sensing Letters (GRSL), 2022</i>
+            <p style="margin-top: 8px;">
+                <a href="https://ieeexplore.ieee.org/abstract/document/9833507/">PDF</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="list-item award" data-category="award">
+            <p class="date">2026</p> 
+            <div>AAAI Outstanding Program Committee Award (Rate = 0.16%)</div>
+        </div>
+        <div class="list-item award" data-category="award">
+            <p class="date">2025</p> 
+            <div>National Scholarship and First Class Scholarship of UESTC</div>
+        </div>
+        <div class="list-item award" data-category="award">
+            <p class="date">2025</p> 
+            <div>"Academic Youth" Postgraduate Student Honor Award of UESTC</div>
+        </div>
+        <div class="list-item award" data-category="award">
+            <p class="date">2024</p> 
+            <div>National Scholarship and First Class Scholarship of UESTC</div>
+        </div>
+        <div class="list-item award" data-category="award">
+            <p class="date">2022</p> 
+            <div>Star of Jiangxi Agricultural University (Highest honor for undergraduate students, 10 out of 20,000+)</div>
+        </div>
+        <div class="list-item award" data-category="award">
+            <p class="date">2022</p> 
+            <div>Star of Self-improvement for College Students in Jiangxi Province (Rate <= 0.05%)</div>
+        </div>
+        <div class="list-item award" data-category="award">
+            <p class="date">2022</p> 
+            <div>National Scholarship</div>
+        </div>
+        <div class="list-item award" data-category="award">
+            <p class="date">2021</p> 
+            <div>National University Student Innovation and Entrepreneurship Development Program (Funding: 20,000 RMB)</div>
+        </div>
+        <div class="list-item award" data-category="award">
+            <p class="date">2020</p> 
+            <div>National Encouragement Scholarship</div>
+        </div>
+    
+        <div class="list-item service" data-category="service">
+            <div class="service-category">Academic Services</div>
+            <ul class="service-list">
+                <li><strong>Conference Reviewer:</strong> ICLR, NeurIPS, CVPR, ECCV, AAAI, ACM MM, IJCAI, AISTATS</li>
+                <li><strong>Journal Reviewer:</strong> TIP, TMM, TCSVT, PR</li>
+            </ul>
+        </div>
+        
+        <div class="list-item service" data-category="service">
+            <div class="service-category">Commercial Services</div>
+            <ul class="service-list">
+                <li>Founder of Jiangxi Helang Technology Co., Ltd. (<span class="fangsong">江西禾浪技术有限公司</span>, Closed Now)</li>
+            </ul>
+        </div>
+
+        <div class="list-item service" data-category="service">
+            <div class="service-category">Student Services</div>
+            <ul class="service-list">
+                <li>Head of the Rights Department of the Student Union</li>
+            </ul>
+        </div>
+
+      </div> </div> <script>
+      // Isotope grid setup.
+      var $grid = $('.grid').isotope({
+        itemSelector: '.list-item',
+        layoutMode: 'fitRows',
+        transitionDuration: '0.4s',
+        stagger: 30,
+        initLayout: false,
+        getSortData: {
+          category: '[data-category]'
+        }
+      });
+
+      // Bind filter button click.
+      $('#filters').on( 'click', 'button', function() {
+        var filterValue = $( this ).attr('data-filter');
+        localStorage.setItem('filterValue', filterValue);
+        $grid.isotope({ filter: filterValue });
+      });
+
+      // Change is-checked class on buttons.
+      $('.button-group').each( function( i, buttonGroup ) {
+        var $buttonGroup = $( buttonGroup );
+        $buttonGroup.on( 'click', 'button', function() {
+          $buttonGroup.find('.is-checked').removeClass('is-checked');
+          $( this ).addClass('is-checked');
+        });
+      });
+
+      function update_isotope() {
+        // Retrieve cached button click.
+        var defaultFilterValue = localStorage.getItem('filterValue');
+        if (defaultFilterValue == null) {
+          defaultFilterValue = ".highlight"
+        }
+        $grid.isotope({ filter: defaultFilterValue });
+        var buttons = document.getElementsByClassName("button");
+        for (var currButton of buttons) {
+          if (currButton.getAttribute('data-filter') == defaultFilterValue) {
+            currButton.classList.add('is-checked');
+          } else {
+            currButton.classList.remove('is-checked');
+          }
+        }
+      }
+
+      // Initialize Layout
+      update_isotope();
+    </script>
+</body>
+</html>

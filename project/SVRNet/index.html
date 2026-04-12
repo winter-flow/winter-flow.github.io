@@ -1,157 +1,242 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-          content="A novel approach that achieves photo-realistic rendering, fast reconstruction, and compact modeling.">
-    <meta name="author" content="Anpei Chen*,
-                                Zexiang Xu*,
-                                Andreas Geiger,
-                                Jingyi Yu,
-                                Hao Su">
+    <meta name="description" content="Think Twice Before Determining: Towards Scene-aware Visual Reasoning for Mirror Detection">
+    <meta name="author" content="Mingfeng Zha, Guoqing Wang, Yunqiang Pei, Tianyu Li, Xiongxin Tang, Jiayi Ma, Yang Yang, Heng Tao Shen">
 
     <title>Think Twice Before Determining: Towards Scene-aware Visual Reasoning for Mirror Detection</title>
 
-    <!-- Custom styles for this template -->
-    <link href="offcanvas.css" rel="stylesheet">
-        <link rel="icon" href="img/tensorf_logo.ico" type="image/x-ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+    <link rel="icon" href="img/tensorf_logo.ico" type="image/x-ico">
 
+    <style>
+        :root {
+            /* Morandi Color Palette */
+            --morandi-bg: #f4f3ef;          /* Soft warm grey/beige background */
+            --morandi-surface: #ffffff;     /* Clean white for cards/jumbotron */
+            --morandi-primary: #78858b;     /* Slate blue-grey for buttons/links */
+            --morandi-primary-hover: #5d676b;
+            --morandi-accent: #b0a39c;      /* Dusty warm grey/brown for bold highlights */
+            --morandi-text: #4a4a4a;        /* Soft dark grey for main text */
+            --morandi-text-light: #7a7a7a;
+            --morandi-border: #e8e6e1;
+        }
 
+        body {
+            background-color: var(--morandi-bg);
+            color: var(--morandi-text);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Header / Jumbotron */
+        .jumbotron {
+            background-color: var(--morandi-surface);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            padding-top: 4rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--morandi-border);
+            margin-bottom: 3rem;
+        }
+
+        .nerf_title_v2 {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .nerf_title_v2 strong {
+            color: var(--morandi-accent);
+            font-weight: 800;
+        }
+
+        .nerf_subheader_v2 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--morandi-text);
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        h3.nerf_subheader_v2 {
+            font-size: 1.2rem;
+            color: var(--morandi-text-light);
+            font-weight: 300;
+            margin-top: 10px;
+        }
+
+        /* Authors & Affiliations */
+        .authors {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .authors a {
+            color: var(--morandi-primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .authors a:hover {
+            color: var(--morandi-primary-hover);
+            text-decoration: underline;
+        }
+
+        .affiliations p {
+            font-size: 1.1rem;
+            color: var(--morandi-text-light);
+            margin: 0;
+            font-weight: 400;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background-color: var(--morandi-primary);
+            border-color: var(--morandi-primary);
+            color: #fff;
+            border-radius: 6px;
+            font-weight: 500;
+            padding: 8px 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+            background-color: var(--morandi-primary-hover) !important;
+            border-color: var(--morandi-primary-hover) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+        }
+
+        /* Content Section Card */
+        .content-section {
+            background-color: var(--morandi-surface);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            color: var(--morandi-text);
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .content-section h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--morandi-accent);
+            border-radius: 2px;
+        }
+
+        .content-section a {
+            color: var(--morandi-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .content-section a:hover {
+            color: var(--morandi-primary-hover);
+            text-decoration: underline;
+        }
+        
+        .works-list {
+            font-size: 1.05rem;
+            color: var(--morandi-text);
+            padding-left: 20px;
+        }
+        
+        .works-list li {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 
 <body>
+
 <div class="jumbotron jumbotron-fluid">
-    <div class="container"></div>
-    <h1 class="nerf_title_v2">SVRNet</h1>
-<!--    <h2 class="nerf_title_v2">Tensorial Radiance Fields</h2>-->
-    <h1 class="nerf_subheader_v2">Think Twice Before Determining: Towards Scene-aware Visual Reasoning for Mirror Detection</h1>
-<!--    <h2>TensoRF: Tensorial Radiance Fields</h2>-->
+    <div class="container text-center">
+        <h1 class="nerf_title_v2"><strong>SVRNet</strong></h1>
+        <h2 class="nerf_subheader_v2">Think Twice Before Determining: Towards Scene-aware Visual Reasoning for Mirror Detection</h2>
         <h3 class="nerf_subheader_v2">TCSVT 2026</h3>
-<!--            <p class="abstract">A compact and efficent scene representation</p>-->
-    <hr>
-    <p class="authors" style="font-size: 1.2rem; font-weight: 500;">
-        <a href="https://winter-flow.github.io/">Mingfeng Zha</a>,
-        <a href="https://scholar.google.com/citations?user=V08v5OEAAAAJ&hl=en&oi=sra">Guoqing Wang</a><sup>*</sup>,
-        <a href="https://scholar.google.com/citations?user=XzZSbxAAAAAJ&hl=en&oi=sra">Yunqiang Pei</a>,
-        <a href="https://scholar.google.com/citations?user=6MUsCT4AAAAJ&hl=en&oi=sra">Tianyu Li</a>,
-        <a href="https://teacher.ucas.ac.cn/~0066508">Xiongxin Tang</a>,
-        <a href="https://scholar.google.com/citations?user=73trMQkAAAAJ&hl=en">Jiayi Ma</a>,
-        <a href="https://cfm.uestc.edu.cn/~yangyang/">Yang Yang</a>,
-        <a href="https://scholar.google.com.au/citations?user=krryaDkAAAAJ&hl=en">Heng Tao Shen</a>
-
-    </p>
-
-    <div class="affiliations" style="margin-top: 15px; display: flex; align-items: center; justify-content: center; gap: 15px;">
-        <!-- <img src="logo/uestc.png" alt="UESTC Logo" style="height: 40px; width: auto;"> -->
         
-        <p style="font-size: 1.1rem; color: #555; margin: 0;">
-            University of Electronic Science and Technology of China
-        </p>
-    </div>
+        <div class="authors" style="font-size: 1.2rem; font-weight: 500;">
+            <p>
+                <a href="https://winter-flow.github.io/">Mingfeng Zha</a>,
+                <a href="https://scholar.google.com/citations?user=V08v5OEAAAAJ&hl=en&oi=sra">Guoqing Wang</a><sup>*</sup>,
+                <a href="https://scholar.google.com/citations?user=XzZSbxAAAAAJ&hl=en&oi=sra">Yunqiang Pei</a>,
+                <a href="https://scholar.google.com/citations?user=6MUsCT4AAAAJ&hl=en&oi=sra">Tianyu Li</a>,
+                <a href="https://teacher.ucas.ac.cn/~0066508">Xiongxin Tang</a>,
+                <a href="https://scholar.google.com/citations?user=73trMQkAAAAJ&hl=en">Jiayi Ma</a>,
+                <a href="https://cfm.uestc.edu.cn/~yangyang/">Yang Yang</a>,
+                <a href="https://scholar.google.com.au/citations?user=krryaDkAAAAJ&hl=en">Heng Tao Shen</a>
+            </p>
+        </div>
 
-    <div class="affiliations" style="margin-top: 15px; display: flex; align-items: center; justify-content: center; gap: 15px;">
-        <!-- <img src="logo/polyu.png" alt="UESTC Logo" style="height: 40px; width: auto;"> -->
-        
-        <p style="font-size: 1.1rem; color: #555; margin: 0;">
-            Institute of Software, Chinese Academy of Sciences
-        </p>
-    </div>
+        <div class="affiliations d-flex flex-column align-items-center gap-2 mt-3">
+            <p>University of Electronic Science and Technology of China</p>
+            <p>Institute of Software, Chinese Academy of Sciences</p>
+            <p>Wuhan University</p>
+            <p>Tongji University</p>
+        </div>
 
-        <div class="affiliations" style="margin-top: 15px; display: flex; align-items: center; justify-content: center; gap: 15px;">
-        <!-- <img src="logo/polyu.png" alt="UESTC Logo" style="height: 40px; width: auto;"> -->
-        
-        <p style="font-size: 1.1rem; color: #555; margin: 0;">
-            Wuhan University 
-        </p>
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-10">
+                <div class="btn-group d-flex flex-wrap justify-content-center" role="group" aria-label="Links menu">
+                    <a class="btn btn-primary m-1" href="https://pan.baidu.com/s/16joB-HNt4T5HZQbKzdTiAg?pwd=i5sc" target="_blank">Datasets (Baidu)</a>
+                    <a class="btn btn-primary m-1" href="https://drive.google.com/drive/folders/1lxOWyNaGD1-qorEtFjdCgA2DUdo_Eue1?usp=drive_link" target="_blank">Mirror Results (Google Drive)</a>
+                    <a class="btn btn-primary m-1" href="https://pan.baidu.com/s/1z1-yDhOKa69HeSHYQ8yhpg?pwd=22vl" target="_blank">Mirror Results (Baidu)</a>
+                    <a class="btn btn-primary m-1" href="https://pan.baidu.com/s/1puGi9HmmWnRviY5a5OBZvw?pwd=yfi4" target="_blank">Annotation Code</a>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="affiliations" style="margin-top: 15px; display: flex; align-items: center; justify-content: center; gap: 15px;">
-        <!-- <img src="logo/tongji.png" alt="UESTC Logo" style="height: 40px; width: auto;"> -->
-        
-        <p style="font-size: 1.1rem; color: #555; margin: 0;">
-            Tongji University
-        </p>
-    </div>
-
-    <!-- <div class="nerf_equal_v2"><span class="text-span_nerf">*</span><span class="text-span_nerf_star">*</span>Denotes Corresponding Author</div> -->
-
-    </br></br>
-    <div class="btn-group" role="group" aria-label="Top menu">
-        <!-- <a class="btn btn-primary" href="https://ChengShiest.github.io/docs/02613.pdf">Appendix</a> -->
-         <!-- <a class="btn btn-primary" href="https://ChengShiest.github.io/docs/02613.pdf">Paper</a> -->
-        <a class="btn btn-primary" href="https://pan.baidu.com/s/16joB-HNt4T5HZQbKzdTiAg?pwd=i5sc">Datasets (Baidu)</a>
-        <a class="btn btn-primary" href="https://drive.google.com/drive/folders/1lxOWyNaGD1-qorEtFjdCgA2DUdo_Eue1?usp=drive_link">Mirror Results (Google Drive)</a>
-        <a class="btn btn-primary" href="https://pan.baidu.com/s/1z1-yDhOKa69HeSHYQ8yhpg?pwd=22vl">Mirror Results (Baidu)</a>
-        <!-- <a class="btn btn-primary" href="https://github.com/winter-flow">Code (upon acceptance)</a> -->
-        <a class="btn btn-primary" href="https://pan.baidu.com/s/1puGi9HmmWnRviY5a5OBZvw?pwd=yfi4">Annotation Code</a>
-    </div>
-    </br></br>
-    <!-- <p class="paragraph-3 nerf_text" style="text-align: center;"> -->
-        <!-- The datasets and other resources will be made publicly available after the paper is accepted. Thank you! :) -->
-    <!-- </p> -->
 </div>
 
-
-
 <div class="container">
-
-
-    <!-- </br></br> -->
-    <div class="section">
-
-        <s2>Series of Works</s2>
-        <hr>
-        <p class="paragraph-3 nerf_text"> 
-            <ol style="text-align: left;">
+    
+    <div class="row">
+        <div class="col-md-10 offset-md-1 content-section">
+            <h2>Series of Works</h2>
+            <ol class="works-list">
                 <li><a href="https://ojs.aaai.org/index.php/AAAI/article/view/28521" target="_blank">Weakly-Supervised Mirror Detection via Scribble Annotations</a>, AAAI 2024</li>
                 <li><a href="https://ieeexplore.ieee.org/abstract/document/10595128" target="_blank">Dual Domain Perception and Progressive Refinement for Mirror Detection</a>, TCSVT 2024</li>
                 <li><a href="https://winter-flow.github.io/project/SVRNet" target="_blank">Think Twice Before Determining: Towards Scene-aware Visual Reasoning for Mirror Detection</a>, TCSVT 2026</li>
                 <li><a href="https://winter-flow.github.io/project/MirrorSAM" target="_blank">Seeing Beyond Illusion: Generalized and Efficient Mirror Detection</a>, AAAI 2026</li>
             </ol>
-        </p>
+            <p class="text-center mt-4" style="font-size: 1.05rem; color: var(--morandi-text-light); font-style: italic;">
+                If you find the above works helpful, please consider citing them. Thank you! :) 
+            </p>
+        </div>
+    </div>
 
-        <p class="paragraph-3 nerf_text" style="text-align: left;">
-        If you find the above works helpful, please consider citing them. Thank you! :) 
-        </p>
-        
-        </br></br>
+    <div class="row">
+        <div class="col-md-10 offset-md-1 content-section">
+            <h2>Acknowledgements</h2>
+            <p class="text-center" style="font-size: 1.05em; color: var(--morandi-text-light); margin-bottom: 0;">
+                This work was supported in part by the National Natural Science Foundation of China under grant U23B2011, 62102069, U20B2063 and 62220106008, the Key R&D Program of Zhejiang under grant 2024SSYS0091.
+            </p>
+        </div>
+    </div>
 
-        <s2> Acknowledgements </s2>
-        <hr>
-        <p class="paragraph-3 nerf_text"> 
-            This work was supported in part by the National Natural Science Foundation of China under grant U23B2011, 
-            62102069, U20B2063 and 62220106008, the Key R&D Program of Zhejiang under grant 2024SSYS0091.
-        </p>
+</div>
 
-
-
-    <!-- </div> -->
-    <!-- <hr> -->
-
-    <!-- <footer>
-        <p>This website is partially borrowed from <a href="https://apchenstu.github.io/TensoRF//">TensoRF</a>.
-    </footer> -->
-<!-- </div> -->
-
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
-
-<script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=51e0d73d83d06baa7a00000f" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<script src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/js/webflow.fd6c33218.js" type="text/javascript"></script>
-
-<!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 </body>
 </html>
