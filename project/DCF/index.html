@@ -194,35 +194,38 @@
     <div class="container text-center">
         <h1 class="nerf_title_v2"><strong>DCF</strong></h1>
         <h2 class="nerf_subheader_v2">Decoupled Causal Flow for Audio-Visual Segmentation</h2>
-        <h3 class="nerf_subheader_v2">Submitted to IEEE Journal</h3>
         
         <div class="mt-4 mb-4">
             <p class="authors" style="font-size: 1.2rem; font-weight: 500;">
                 <a href="https://winter-flow.github.io/">Mingfeng Zha</a>,
-                <a href="https://scholar.google.com/citations?hl=en&user=V08v5OEAAAAJ">Guoqing Wang</a><sup>*</sup>,
-                <a href="https://scholar.google.com/citations?user=6MUsCT4AAAAJ&hl=en&oi=sra">Tianyu Li</a>,
-                <a href="https://scholar.google.com.au/citations?hl=en&user=vIr3ICQAAAAJ">Peng Wang</a>,
+                <a href="https://scholar.google.com/citations?hl=en&user=V08v5OEAAAAJ">Guoqing Wang</a>,
+                <a href="https://scholar.google.com/citations?hl=en&user=YjSHPjcAAAAJ">Jingcai Guo</a><sup>*</sup>,
                 <a href="https://scholar.google.com.au/citations?hl=en&user=XzZSbxAAAAAJ">Yunqiang Pei</a>,
-                <a href="https://scholar.google.com/citations?hl=en&user=YjSHPjcAAAAJ">Jingcai Guo</a>,
+                <a href="https://scholar.google.com/citations?user=6MUsCT4AAAAJ&hl=en&oi=sra">Tianyu Li</a>,
+                <a href="https://xiaorui-jiang.github.io/">Xiaorui Jiang</a>,
                 <a href="https://cfm.uestc.edu.cn/~yangyang/">Yang Yang</a>,
                 <a href="https://scholar.google.com.au/citations?user=krryaDkAAAAJ&hl=en">Heng Tao Shen</a>
             </p>
         </div>
 
+        <!-- <a href="https://cse.hkust.edu.hk/~songguo/">Song Guo</a> -->
+
         <div class="affiliations d-flex flex-column align-items-center gap-2">
-            <p>University of Electronic Science and Technology of China</p>
             <p>The Hong Kong Polytechnic University</p>
+            <p>University of Electronic Science and Technology of China</p>
             <p>Tongji University</p>
+            <!-- <p>The Hong Kong University of Science and Technology</p> -->
         </div>
 
         <div class="row justify-content-center mt-5">
             <div class="col-md-10">
                 <div class="btn-group d-flex flex-wrap justify-content-center" role="group" aria-label="Links menu">
-                    <a class="btn btn-primary m-1" href="https://openaccess.thecvf.com/content/ICCV2025/papers/Zha_Implicit_Counterfactual_Learning_for_Audio-Visual_Segmentation_ICCV_2025_paper.pdf">Conference Version</a>
-                    <a class="btn btn-primary m-1" href="https://drive.google.com/file/d/1jNyxI91mD-shBpbb0Se28FPRzOCwMXWc/view?usp=drive_link">Segmentation Results (Drive)</a>
-                    <a class="btn btn-primary m-1" href="https://pan.baidu.com/s/1fARfFl3jlfN2_Pb7VF-QNQ?pwd=143y">Segmentation Results (Baidu)</a>
-                    <a class="btn btn-primary m-1" href="https://drive.google.com/file/d/1v3jE8Hr0_okEJgOMyf-pVAaLtgu89FjU/view?usp=drive_link">Comparison Results (Drive)</a>
-                    <a class="btn btn-primary m-1" href="https://pan.baidu.com/s/1RH34CrRDQV4g_yyeV7j0FQ?pwd=pi6r">Comparison Results (Baidu)</a>
+                    <a class="btn btn-primary m-1" href="https://drive.google.com/file/d/15iAQvRgE7g6vHxd35cG-ROY7mfptHM0K/view?usp=drive_link">Semantic Results (Google Drive)</a>
+                    <a class="btn btn-primary m-1" href="https://drive.google.com/file/d/1lmPKH-QnA8Xlq0Qb65yUs-BgI7b-fECg/view?usp=drive_link">Instance Results (Google Drive)</a>
+                    <a class="btn btn-primary m-1" href="https://drive.google.com/file/d/1XypjPZxDUXe5tqvStBRQgZlGsEreIM3t/view?usp=drive_link">Comparison Results (Google Drive)</a>
+                    <a class="btn btn-primary m-1" href="https://pan.baidu.com/s/11WQbCEP5rMQ6FviaOPaU6g?pwd=r2gp">Semantic Results (Baidu)</a>
+                    <a class="btn btn-primary m-1" href="https://pan.baidu.com/s/1tlWLAwA7e7vQ7eVvdbM_DA?pwd=2xhr">Instance Results (Baidu)</a>                 
+                    <a class="btn btn-primary m-1" href="https://pan.baidu.com/s/1yta4YM25xniRY8L-sduafg?pwd=99qs">Comparison Results (Baidu)</a>
                     <a class="btn btn-primary m-1" href="https://drive.google.com/file/d/1Tvse5DIYFQa6e_dmnba_O0U7fKKin_TW/view?usp=drive_link">Evaluation Code</a>
                 </div>
             </div>
@@ -250,54 +253,78 @@
         <div class="col-md-12">
             <h2 class="text-center section-title">Demo Videos</h2>
             
-            <h4 class="video-category-title">Part 1: Binary / Semantic Segmentation</h4>
+            <h4 class="video-category-title">Part 1: Semantic Segmentation</h4>
             <div class="row">
                 <div class="col-md-4">
                     <div class="video-card">
                         <video width="100%" controls muted autoplay loop style="border-radius: 6px;">
-                            <source src="./videos/bassoon.mp4" type="video/mp4">
+                            <source src="./videos/semantic/donkey.mp4" type="video/mp4">
                         </video>
-                        <p class="text-center">Bassoon</p>
+                        <p class="text-center">Donkey</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="video-card">
                         <video width="100%" controls muted autoplay loop style="border-radius: 6px;">
-                            <source src="./videos/marimba.mp4" type="video/mp4">
+                            <source src="./videos/semantic/duck.mp4" type="video/mp4">
                         </video>
-                        <p class="text-center">Marimba</p>
+                        <p class="text-center">Duck</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="video-card">
                         <video width="100%" controls muted autoplay loop style="border-radius: 6px;">
-                            <source src="./videos/airplane.mp4" type="video/mp4">
+                            <source src="./videos/semantic/handpan.mp4" type="video/mp4">
                         </video>
-                        <p class="text-center">Airplane</p>
+                        <p class="text-center">Handpan</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="video-card">
                         <video width="100%" controls muted autoplay loop style="border-radius: 6px;">
-                            <source src="./videos/harp.mp4" type="video/mp4">
+                            <source src="./videos/semantic/emergency-car.mp4" type="video/mp4">
                         </video>
-                        <p class="text-center">Harp</p>
+                        <p class="text-center">Emergency-car</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="video-card">
                         <video width="100%" controls muted autoplay loop style="border-radius: 6px;">
-                            <source src="./videos/keyboard.mp4" type="video/mp4">
+                            <source src="./videos/semantic/car_dog.mp4" type="video/mp4">
                         </video>
-                        <p class="text-center">Keyboard</p>
+                        <p class="text-center">Car & Dog</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="video-card">
                         <video width="100%" controls muted autoplay loop style="border-radius: 6px;">
-                            <source src="./videos/guitar_man.mp4" type="video/mp4">
+                            <source src="./videos/semantic/cello_violin.mp4" type="video/mp4">
                         </video>
-                        <p class="text-center">Guitar & Man</p>
+                        <p class="text-center">Cello & Violin</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="video-card">
+                        <video width="100%" controls muted autoplay loop style="border-radius: 6px;">
+                            <source src="./videos/semantic/piano_violin.mp4" type="video/mp4">
+                        </video>
+                        <p class="text-center">Piano & Violin</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="video-card">
+                        <video width="100%" controls muted autoplay loop style="border-radius: 6px;">
+                            <source src="./videos/semantic/drum_guitar.mp4" type="video/mp4">
+                        </video>
+                        <p class="text-center">Drum & Guitar</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="video-card">
+                        <video width="100%" controls muted autoplay loop style="border-radius: 6px;">
+                            <source src="./videos/semantic/flute_piano_clarinet.mp4" type="video/mp4">
+                        </video>
+                        <p class="text-center">Flute & Piano & Clarinet</p>
                     </div>
                 </div>
             </div>
@@ -307,25 +334,73 @@
                 <div class="col-md-4">
                     <div class="video-card">
                         <video width="100%" controls muted autoplay loop style="border-radius: 6px;">
-                            <source src="./videos/accordion_guitar.mp4" type="video/mp4">
+                            <source src="./videos/instance/airplane.mp4" type="video/mp4">
                         </video>
-                        <p class="text-center">Accordion & Guitar</p>
+                        <p class="text-center">Airplane</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="video-card">
                         <video width="100%" controls muted autoplay loop style="border-radius: 6px;">
-                            <source src="./videos/cello_violin.mp4" type="video/mp4">
+                            <source src="./videos/instance/lawn_mover.mp4" type="video/mp4">
                         </video>
-                        <p class="text-center">Cello & Violin</p>
+                        <p class="text-center">Lawn Mover</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="video-card">
                         <video width="100%" controls muted autoplay loop style="border-radius: 6px;">
-                            <source src="./videos/cello_bassoon_violin.mp4" type="video/mp4">
+                            <source src="./videos/instance/tree_harvester.mp4" type="video/mp4">
                         </video>
-                        <p class="text-center">Cello, Bassoon & Violin</p>
+                        <p class="text-center">Tree Harvester</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="video-card">
+                        <video width="100%" controls muted autoplay loop style="border-radius: 6px;">
+                            <source src="./videos/instance/clarinet.mp4" type="video/mp4">
+                        </video>
+                        <p class="text-center">Clarinet</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="video-card">
+                        <video width="100%" controls muted autoplay loop style="border-radius: 6px;">
+                            <source src="./videos/instance/tuba.mp4" type="video/mp4">
+                        </video>
+                        <p class="text-center">Tuba</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="video-card">
+                        <video width="100%" controls muted autoplay loop style="border-radius: 6px;">
+                            <source src="./videos/instance/person.mp4" type="video/mp4">
+                        </video>
+                        <p class="text-center">Person</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="video-card">
+                        <video width="100%" controls muted autoplay loop style="border-radius: 6px;">
+                            <source src="./videos/instance/ukulele.mp4" type="video/mp4">
+                        </video>
+                        <p class="text-center">Ukulele</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="video-card">
+                        <video width="100%" controls muted autoplay loop style="border-radius: 6px;">
+                            <source src="./videos/instance/flute&violin.mp4" type="video/mp4">
+                        </video>
+                        <p class="text-center">Flute & Violin</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="video-card">
+                        <video width="100%" controls muted autoplay loop style="border-radius: 6px;">
+                            <source src="./videos/instance/guitar&cello.mp4" type="video/mp4">
+                        </video>
+                        <p class="text-center">Guitar & Cello</p>
                     </div>
                 </div>
             </div>
