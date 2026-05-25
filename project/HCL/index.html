@@ -112,7 +112,22 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
         }
 
-        /* Content Section Card (for Acknowledgements, Abstract, etc.) */
+        /* Abstract Section */
+        .abstract-section {
+            background-color: var(--morandi-surface);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            margin-bottom: 4rem;
+        }
+
+        .abstract-section h2 {
+            color: var(--morandi-text);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        /* Content Section Card */
         .content-section {
             background-color: var(--morandi-surface);
             padding: 40px;
@@ -126,6 +141,36 @@
             font-weight: 600;
             margin-bottom: 20px;
             text-align: center;
+        }
+
+        /* Section Titles (Imported from DCF for BibTeX) */
+        .section-title {
+            color: var(--morandi-text);
+            font-weight: 600;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--morandi-accent);
+            border-radius: 2px;
+        }
+
+        /* BibTeX Style (Imported from DCF) */
+        pre {
+            background-color: var(--morandi-surface) !important;
+            border: 1px solid var(--morandi-border);
+            color: var(--morandi-text);
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
+            font-size: 0.95rem;
         }
 
         hr {
@@ -181,12 +226,24 @@
 <div class="container">
     
     <div class="row">
-        <div class="col-md-10 offset-md-1 content-section">
-            <h2>Acknowledgements</h2>
-            <p class="text-center" style="font-size: 1.05em; color: var(--morandi-text-light);">
-                This work was supported in part by the National Natural Science Foundation of China under grant U23B2011, 
-                62102069, U20B2063 and 62220106008, the Key R&D Program of Zhejiang under grant 2024SSYS0091.
+        <div class="col-md-10 offset-md-1 abstract-section">
+            <h2 class="text-center">Abstract</h2>
+            <p class="text-justify" style="font-size: 1.05em;">
+                Camouflaged object detection (COD) aims to localize targets that exhibit minimal perceptual differences from backgrounds through physical attributes. Existing methods, constrained by the static train-then-freeze paradigm, suffer from domain rigidity and annotation dependency, limiting their adaptability to scene variations and unseen camouflage patterns. To overcome these, we propose the hierarchical consistency learning (HCL) framework, which integrates test-time adaptation for dynamic representation recalibration. Specifically, we design the hierarchical representation reconstruction (HRR) to alleviate feature entanglement by synergizing spatial reconstruction with dual-stream frequency-domain decomposition, enhancing robustness against appearance homogenization. The pixel and spectrum inference provide structural and contextual priors. We further introduce task affinity guidance (TAG) to propagate knowledge across branches via channel-wise affinity, aligning local discriminative cues and mitigating semantic drift. To ensure semantic invariance, we formulate the prototype consistency calibration (PCC), which aggregates region features into compact prototypes and establishes prototype-feature similarity. This imposes implicit and hierarchical constraints that bridge task and representation gaps. Extensive experiments across four camouflaged and four underwater object benchmarks, under three degradation settings, demonstrate that our method consistently outperforms state-of-the-art approaches, highlighting its robustness and generalization under distribution shifts.
             </p>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-10 offset-md-1">
+            <h2 class="section-title text-center">BibTeX</h2>
+            <pre style="padding: 20px; border-radius: 8px; overflow-x: auto;"><code>@article{zha2026hcl,
+    title={Hierarchical Consistency Learning for Test-time Adaptation in Camouflage Perception},
+    author={Zha, Mingfeng and Li, Tianyu and Wang, Guoqing and Pei, Yunqiang and Qiao, Chaofan and Zhang, Jiening and Yang, Yang and Shen, Heng Tao},
+    journal={preprint},
+    year={2026},
+    url={https://winter-flow.github.io/project/HCL}
+}</code></pre>
         </div>
     </div>
 

@@ -112,6 +112,36 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
         }
 
+        /* Abstract Section Style */
+        .abstract-section {
+            background-color: var(--morandi-surface);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            margin-bottom: 3rem;
+        }
+
+        .abstract-section h2 {
+            color: var(--morandi-text);
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .abstract-section h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--morandi-accent);
+            border-radius: 2px;
+        }
+
         /* Content Section Card */
         .content-section {
             background-color: var(--morandi-surface);
@@ -162,6 +192,36 @@
         .works-list li {
             margin-bottom: 10px;
         }
+
+        /* Section Titles (For BibTeX) */
+        .section-title {
+            color: var(--morandi-text);
+            font-weight: 600;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--morandi-accent);
+            border-radius: 2px;
+        }
+
+        /* BibTeX Style */
+        pre {
+            background-color: var(--morandi-surface) !important;
+            border: 1px solid var(--morandi-border);
+            color: var(--morandi-text);
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
+            font-size: 0.95rem;
+        }
     </style>
 </head>
 
@@ -201,6 +261,15 @@
 </div>
 
 <div class="container">
+
+    <div class="row">
+        <div class="col-md-10 offset-md-1 abstract-section">
+            <h2>Abstract</h2>
+            <p class="text-justify" style="font-size: 1.05em;">
+                Reflective imaging enables the mirror imagings and physical entities to possess identical attributes, \textit{e.g.,} color and shape. Current mirror detection (MD) methods primarily rely on designing functional components to establish the correlation and disparities between the imagings and entities, thereby identifying the mirror regions. However, the exploration of extended scenes with dynamic content changes is rarely investigated. Therefore, we propose the MirrorSAM designed for MD based on the Segment Anything Model (SAM). Specifically, due to the varying reflections produced by mirrors in different positions and the complex visual space that interferes with localization, we design the hierarchical mixture of direction experts (HMDE) in the low-rank space to reduce biases towards entities in SAM and dynamically adjust experts based on input scene. We observe differences in depth between mirrors and adjacent areas, and propose the depth token calibration (DTC), which introduces a learnable depth token to generate depth map and serve as an error correction factor. We further formulate the selective pixel-prototype contrastive (SPPC) loss, selecting partially confusable samples to promote the decoupling of mirror and non-mirror representations. Extensive experiments conducted on four mirror benchmarks and four settings demonstrate that our approach surpasses state-of-the-art methods with few trainable parameters and FLOPs. We further extend to four transparent surface benchmarks to validate generalization.
+            </p>
+        </div>
+    </div>
     
     <div class="row">
         <div class="col-md-10 offset-md-1 content-section">
@@ -217,12 +286,15 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-10 offset-md-1 content-section">
-            <h2>Acknowledgements</h2>
-            <p class="text-center" style="font-size: 1.05em; color: var(--morandi-text-light); margin-bottom: 0;">
-                This work was supported in part by the National Natural Science Foundation of China under grant U23B2011, 62102069, U20B2063 and 62220106008, the Sichuan Science and Technology Program under Grant 2024NSFTD0034.
-            </p>
+    <div class="row mb-5">
+        <div class="col-md-10 offset-md-1">
+            <h2 class="section-title text-center">BibTeX</h2>
+            <pre style="padding: 20px; border-radius: 8px; overflow-x: auto;"><code>@inproceedings{zha2026mirrorsam,
+    title={Seeing Beyond Illusion: Generalized and Efficient Mirror Detection},
+    author={Zha, Mingfeng and Wang, Guoqing and Li, Tianyu and Dong, Wei and Wang, Peng and Yang, Yang},
+    booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+    year={2026},
+}</code></pre>
         </div>
     </div>
 

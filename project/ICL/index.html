@@ -112,6 +112,21 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
         }
 
+        /* Abstract Section Style */
+        .abstract-section {
+            background-color: var(--morandi-surface);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            margin-bottom: 4rem;
+        }
+
+        .abstract-section h2 {
+            color: var(--morandi-text);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
         /* Content Section Card */
         .content-section {
             background-color: var(--morandi-surface);
@@ -137,6 +152,36 @@
         .content-section a:hover {
             color: var(--morandi-primary-hover);
             text-decoration: underline;
+        }
+
+        /* Section Titles (For BibTeX) */
+        .section-title {
+            color: var(--morandi-text);
+            font-weight: 600;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--morandi-accent);
+            border-radius: 2px;
+        }
+
+        /* BibTeX Style */
+        pre {
+            background-color: var(--morandi-surface) !important;
+            border: 1px solid var(--morandi-border);
+            color: var(--morandi-text);
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
+            font-size: 0.95rem;
         }
     </style>
 </head>
@@ -182,6 +227,15 @@
 <div class="container">
     
     <div class="row">
+        <div class="col-md-10 offset-md-1 abstract-section">
+            <h2 class="text-center">Abstract</h2>
+            <p class="text-justify" style="font-size: 1.05em;">
+                Audio-visual segmentation (AVS) aims to segment objects in videos based on audio cues. Existing AVS methods are primarily designed to enhance interaction efficiency but pay limited attention to modality representation discrepancies and imbalances. To overcome this, we propose the implicit counterfactual framework (ICF) to achieve unbiased cross-modal understanding. Due to the lack of semantics, heterogeneous representations may lead to erroneous matches, especially in complex scenes with ambiguous visual content or interference from multiple audio sources. We introduce the multi-granularity implicit text (MIT) involving video-, segment- and frame-level as the bridge to establish the modality-shared space, reducing modality gaps and providing prior guidance. Visual content carries more information and typically dominates, thereby marginalizing audio features in the decision-making. To mitigate knowledge preference, we propose the semantic counterfactual (SC) to learn orthogonal representations in the latent space, generating diverse counterfactual samples, thus avoiding biases introduced by complex functional designs and explicit modifications of text structures or attributes. We further formulate the collaborative distribution-aware contrastive learning (CDCL), incorporating factual-counterfactual and inter-modality contrasts to align representations, promoting cohesion and decoupling. Extensive experiments on three public datasets validate that the proposed method achieves state-of-the-art performance. 
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col-md-10 offset-md-1 content-section" style="margin-bottom: 2rem;">
             <h2>Extended Work</h2>
             <p class="text-center" style="font-size: 1.05em; color: var(--morandi-text);">
@@ -191,12 +245,15 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-10 offset-md-1 content-section">
-            <h2>Acknowledgements</h2>
-            <p class="text-center" style="font-size: 1.05em; color: var(--morandi-text-light);">
-                This work was supported in part by the National Natural Science Foundation of China under grant U23B2011, 62102069, U20B2063 and 62220106008, the Key R&D Program of Zhejiang under grant 2024SSYS0091, the Sichuan Science and Technology Program under Grant 2024NSFTD0034.
-            </p>
+    <div class="row mb-5">
+        <div class="col-md-10 offset-md-1">
+            <h2 class="section-title text-center">BibTeX</h2>
+            <pre style="padding: 20px; border-radius: 8px; overflow-x: auto;"><code>@inproceedings{zha2025icl,
+    title={Implicit Counterfactual Learning for Audio-Visual Segmentation},
+    author={Zha, Mingfeng and Li, Tianyu and Wang, Guoqing and Wang, Peng and Wu, Yangyang and Yang, Yang and Shen, Heng Tao},
+    booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+    year={2025},
+}</code></pre>
         </div>
     </div>
 

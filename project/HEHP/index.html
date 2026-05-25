@@ -112,8 +112,8 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
         }
 
-        /* Content Section Card */
-        .content-section {
+        /* Abstract Section Style */
+        .abstract-section {
             background-color: var(--morandi-surface);
             padding: 40px;
             border-radius: 12px;
@@ -121,11 +121,40 @@
             margin-bottom: 4rem;
         }
 
-        .content-section h2 {
+        .abstract-section h2 {
             color: var(--morandi-text);
             font-weight: 600;
             margin-bottom: 20px;
-            text-align: center;
+        }
+
+        /* Section Titles (Imported from DCF for BibTeX) */
+        .section-title {
+            color: var(--morandi-text);
+            font-weight: 600;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--morandi-accent);
+            border-radius: 2px;
+        }
+
+        /* BibTeX Style */
+        pre {
+            background-color: var(--morandi-surface) !important;
+            border: 1px solid var(--morandi-border);
+            color: var(--morandi-text);
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
+            font-size: 0.95rem;
         }
     </style>
 </head>
@@ -172,11 +201,23 @@
 <div class="container">
     
     <div class="row">
-        <div class="col-md-10 offset-md-1 content-section">
-            <h2>Acknowledgements</h2>
-            <p class="text-center" style="font-size: 1.05em; color: var(--morandi-text-light);">
-                This work was supported in part by the National Natural Science Foundation of China under grant U23B2011, 62102069, U20B2063 and 62220106008, the Key R&D Program of Zhejiang under grant 2024SSYS0091, the Sichuan Science and Technology Program under Grant 2024NSFTD0034.
+        <div class="col-md-10 offset-md-1 abstract-section">
+            <h2 class="text-center">Abstract</h2>
+            <p class="text-justify" style="font-size: 1.05em;">
+                Existing underwater salient object detection (USOD) methods design fusion strategies to integrate multimodal information, but lack exploration of modal characteristics. To address this, we separately leverage the RGB and depth branches to learn disentangled representations, formulating the heterogeneous experts and hierarchical perception network (HEHP). Specifically, to reduce modal discrepancies, we propose the hierarchical prototype guided interaction (HPI), which achieves fine-grained alignment guided by the semantic prototypes, and then refines with complementary modalities. We further design the mixture of frequency experts (MoFE), where experts focus on modeling high- and low-frequency respectively, collaborating to explicitly obtain hierarchical representations. To efficiently integrate diverse spatial and frequency information, we formulate the four-way fusion experts (FFE), which dynamically selects optimal experts for fusion while being sensitive to scale and orientation. Since depth maps with poor quality inevitably introduce noises, we design the uncertainty injection (UI) to explore high uncertainty regions by establishing pixel-level probability distributions. We further formulate the holistic prototype contrastive (HPC) loss based on semantics and patches to learn compact and general representations across modalities and images. Finally, we employ varying supervision based on branch distinctions to implicitly construct difference modeling. Extensive experiments on two USOD datasets and four relevant underwater scene benchmarks validate the effect of the proposed method, surpassing state-of-the-art binary detection models. Impressive results on seven natural scene benchmarks further demonstrate the scalability. 
             </p>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-10 offset-md-1">
+            <h2 class="section-title text-center">BibTeX</h2>
+            <pre style="padding: 20px; border-radius: 8px; overflow-x: auto;"><code>@article{zha2025hehp,
+    title={Heterogeneous Experts and Hierarchical Perception for Underwater Salient Object Detection},
+    author={Zha, Mingfeng and Pei, Yunqiang and Wang, Guoqing and Li, Tianyu and Tang, Xiongxin Artis and Li, Chongyi and Yang, Yang and Shen, Heng Tao},
+    journal={IEEE Transactions on Image Processing},
+    year={2025},
+}</code></pre>
         </div>
     </div>
 

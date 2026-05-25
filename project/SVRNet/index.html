@@ -112,6 +112,36 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
         }
 
+        /* Abstract Section Style */
+        .abstract-section {
+            background-color: var(--morandi-surface);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            margin-bottom: 3rem;
+        }
+
+        .abstract-section h2 {
+            color: var(--morandi-text);
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .abstract-section h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--morandi-accent);
+            border-radius: 2px;
+        }
+
         /* Content Section Card */
         .content-section {
             background-color: var(--morandi-surface);
@@ -162,6 +192,36 @@
         .works-list li {
             margin-bottom: 10px;
         }
+
+        /* Section Titles (For BibTeX) */
+        .section-title {
+            color: var(--morandi-text);
+            font-weight: 600;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--morandi-accent);
+            border-radius: 2px;
+        }
+
+        /* BibTeX Style */
+        pre {
+            background-color: var(--morandi-surface) !important;
+            border: 1px solid var(--morandi-border);
+            color: var(--morandi-text);
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
+            font-size: 0.95rem;
+        }
     </style>
 </head>
 
@@ -209,6 +269,15 @@
 <div class="container">
     
     <div class="row">
+        <div class="col-md-10 offset-md-1 abstract-section">
+            <h2>Abstract</h2>
+            <p class="text-justify" style="font-size: 1.05em;">
+                Mirror detection (MD) aims to overcome interference caused by reflections and locate mirror regions. Existing methods focus on designing components to explicitly establish the associations between physical entities and corresponding imagings, or utilizing rotation to construct symmetric consistency. We observe that: a) incomplete and incorrect correspondence between entities and imagings; b) other physical materials (\textit{e.g.,} glass) exhibit characteristics partially similar to mirrors, causing confusion when they co-occur; c) complex interfering factors (\textit{e.g.,} occlusion) and reflection mechanisms may expand vector space several times over. To address these issues in a unified manner, we formulate the scene-aware visual reasoning network (SVRNet) based on visual prompts. Specifically, we construct the prototype-guided prompt chain reasoning (PPCR) that generates a mixed chain of thought reasoning based on maximal difference heterogeneous prototypes to construct comprehensive spatial location and semantic perception. Noise may accumulate gradually through the chain, and crucial clues may also disappear. Therefore, we design the prompt evolution (PE) to filter out noise and enhance the coupling between prompts. We further develop the mixture of prompt injection expert (MPIE) to dynamically select the optimal injection strategy in the low-rank space based on specific scene. Due to reflection interference and random parameter space introducing potential ambiguity, we formulate the three-way evidence-aware (TEA) loss to quantify the uncertainty, thereby providing reliable predictions. To leverage historical knowledge and further disentangle representations, we propose the frequency prototype contrastive (FPC) loss for learning more generalizable features across images. Finally, we relabel 25,828 images and formulate the first point-supervised MD framework. Extensive experiments conducted on four mirror benchmarks under three settings demonstrate that our method surpasses state-of-the-art approaches. Promising results are also achieved on six related benchmarks, showing its generality.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col-md-10 offset-md-1 content-section">
             <h2>Series of Works</h2>
             <ol class="works-list">
@@ -223,12 +292,15 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-10 offset-md-1 content-section">
-            <h2>Acknowledgements</h2>
-            <p class="text-center" style="font-size: 1.05em; color: var(--morandi-text-light); margin-bottom: 0;">
-                This work was supported in part by the National Natural Science Foundation of China under grant U23B2011, 62102069, U20B2063 and 62220106008, the Key R&D Program of Zhejiang under grant 2024SSYS0091.
-            </p>
+    <div class="row mb-5">
+        <div class="col-md-10 offset-md-1">
+            <h2 class="section-title text-center">BibTeX</h2>
+            <pre style="padding: 20px; border-radius: 8px; overflow-x: auto;"><code>@article{zha2026svrnet,
+    title={Think Twice Before Determining: Towards Scene-aware Visual Reasoning for Mirror Detection},
+    author={Zha, Mingfeng and Wang, Guoqing and Pei, Yunqiang and Li, Tianyu and Tang, Xiongxin and Ma, Jiayi and Yang, Yang and Shen, Heng Tao},
+    journal={IEEE Transactions on Circuits and Systems for Video Technology},
+    year={2026},
+}</code></pre>
         </div>
     </div>
 
